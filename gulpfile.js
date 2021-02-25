@@ -160,14 +160,14 @@ function CSS()
             })
         )
         .pipe(dest(path.build.css))
+        .pipe(browsersync.stream())
         .pipe(cleanCss())
         .pipe(
             rename({
                 extname: '.min.css'
             })
         )
-        .pipe(dest(path.build.css))
-        .pipe(browsersync.stream());
+        .pipe(dest(path.build.css));
 }
 
 function JS()
