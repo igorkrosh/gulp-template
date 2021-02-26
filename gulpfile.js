@@ -55,6 +55,10 @@ gulp.task('bundle', function() {
     .pipe(dest(path.build.js));
 });
 
+gulp.task('build', function() {
+    return gulp.series(Clean, BundleJS, gulp.parallel(JS, CSS, HTML, PUG, IMG, FONTS), FontsStyle);
+});
+
 function FontsStyle(cb) {
     let fileContent = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
     if (fileContent == '') 
