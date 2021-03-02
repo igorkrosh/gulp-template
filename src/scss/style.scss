@@ -1,0 +1,39 @@
+body
+{
+    margin: 0;
+    font-family: "TrajanPro3";
+    color: #fff;
+    background: #000;
+}
+
+body.lock
+{
+    overflow: hidden;
+}
+
+*, ::after, ::before 
+{
+    box-sizing: border-box;
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+button
+{
+    outline: none;
+}
+
+.container
+{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@import 'responce';
