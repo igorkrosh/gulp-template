@@ -1,8 +1,9 @@
-$(document).on('ready', Core);
+$(document).ready(Core);
 
 function Core()
 {
     SetTabSwitcher();
+    SetModal();
 }
 
 function SetTabSwitcher()
@@ -41,4 +42,57 @@ function SwitchTab(target)
             opacity: 1
         }, 500)
     })
+}
+
+function SetModal()
+{
+    $('[modal]').on('click', function()
+    {
+        let modalId = $(this).attr('modal');
+        ShowModal(`#${modalId}`);
+    });
+
+    $('.modal__dialog').on('click', function(e) {
+        e.stopPropagation();
+    });
+
+    $('.modal').on('click', function() {
+        HideModal(`#${$(this).attr('id')}`);
+    });
+
+    $('.btn__modal__close').on('click', function ()
+    {
+        let modalId = $(this).closest('.modal').attr('id');
+        HideModal(`#${modalId}`);
+    });
+}
+
+function ShowModal(modalId)
+{
+    $(modalId + ' .modal__dialog').off('animationend');
+    $(modalId).addClass('active');
+    $('body').addClass('lock');
+    $(modalId + ' .modal__dialog').addClass('fadeInDownBig')
+    
+    $('body').append('<div class="modal__backdrop"></div>');
+    setTimeout(function() {
+        $('.modal__backdrop').addClass('active');
+    }, 50)
+}
+
+function HideModal(modalId)
+{
+    $(modalId + ' .modal__dialog').removeClass('fadeInDownBig');
+    $(modalId + ' .modal__dialog').addClass('fadeOutDownBig');
+    $('.modal__backdrop').removeClass('active');
+    $('body').removeClass('lock');
+    $(modalId + ' .modal__dialog').on('animationend', function() {
+        if (!$(modalId).hasClass('active'))
+        {
+            return;
+        }
+        $(modalId).removeClass('active');
+        $(modalId + ' .modal__dialog').removeClass('fadeOutDownBig');
+        $('.modal__backdrop').remove();
+    });
 }

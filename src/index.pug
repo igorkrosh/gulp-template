@@ -11,4 +11,7 @@ html(lang="ru")
     body
         h1 Hi from PUG! 
         +InputRadio('name', 'test')
+        
+        +Modal('test', 'ModalTemplate')
+        button(modal="test") Modal Test
         include pug/scripts.pug
