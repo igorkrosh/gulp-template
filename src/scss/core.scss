@@ -1,0 +1,77 @@
+/***InputRadio***/
+
+.radio
+{
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 20px;
+
+    input
+    {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark 
+    {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 16px;
+        width: 16px;
+        background-color: #eee;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    .checkmark:after 
+    {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .checkmark:after 
+    {
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #f37153;
+    }
+}
+
+.radio:hover input ~ .checkmark 
+{
+    background-color: #ccc;
+}
+
+.radio input:checked ~ .checkmark:after 
+{
+    
+    opacity: 1;
+}
+
+/***Tabs***/
+
+.tab__viewer 
+{
+    position: relative;
+    transition: 0.5s;
+
+    .tab:not(.active)
+    {
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+}

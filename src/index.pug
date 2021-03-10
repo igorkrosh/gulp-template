@@ -1,3 +1,5 @@
+include pug/mixins.pug
+
 doctype html
 html(lang="ru")
     head
@@ -8,5 +10,5 @@ html(lang="ru")
         include pug/head.pug
     body
         h1 Hi from PUG! 
-
+        +InputRadio('name', 'test')
         include pug/scripts.pug
