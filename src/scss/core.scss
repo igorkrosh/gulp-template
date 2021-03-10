@@ -286,3 +286,54 @@
 {
     transform: translate(-50%, -50%) rotate(135deg);
 }
+
+/***Container***/
+
+.container
+{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(max-width: 1200px)
+{
+    .container
+    {
+        max-width: 1024px;
+    }
+}
+
+@media(max-width: 1024px)
+{
+    .container
+    {
+        max-width: 992px;
+    }
+}
+
+@media(max-width: 992px)
+{
+    .container
+    {
+        max-width: 768px;
+    }
+}
+
+@media(max-width: 768px)
+{
+    .container
+    {
+        max-width: 576px;
+    }
+}
+
+@media(max-width: 576px)
+{
+    .container
+    {
+        max-width: 100%;
+    }
+}
