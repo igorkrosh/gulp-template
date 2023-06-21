@@ -1,5 +1,7 @@
 global.$ = global.jQuery = require('jquery');
 
+require('jquery-modal');
+
 //require('owl.carousel');
 
 /*

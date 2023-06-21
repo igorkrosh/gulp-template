@@ -1,9 +1,6 @@
 mixin Modal(id, modalTemplate)
     .modal(id=id)
-        .modal__dialog
-            button.btn__modal__close
-            .modal__content
-                +#{modalTemplate}(entry)
+        +#{modalTemplate}(entry)
 
 mixin ModalTemplate
     h1 ModalTemplate
