@@ -14,7 +14,7 @@ let path = {
     src: {
         html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`],
         pug: `${sourceFolder}/*.pug`,
-        css: [`${sourceFolder}/scss/style.scss`, `${sourceFolder}/scss/bundle.scss`],
+        css: [`${sourceFolder}/scss/style.scss`, `${sourceFolder}/scss/bundle.scss`, `${sourceFolder}/scss/response.scss`],
         js: [`${sourceFolder}/js/index.js`],
         img: `${sourceFolder}/images/**/*.+(png|jpg|gif|ico|svg|webp)`,
         fonts: `${sourceFolder}/fonts/*.ttf`
@@ -61,7 +61,8 @@ gulp.task('build', function() {
     return gulp.series(Clean, BundleJS, gulp.parallel(JS, CSS, HTML, PUG, IMG, FONTS), FontsStyle);
 });
 
-function FontsStyle(cb) {
+function FontsStyle(cb)
+{
     let fileContent = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
     if (fileContent == '') 
     {
