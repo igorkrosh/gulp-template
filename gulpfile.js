@@ -47,6 +47,8 @@ let cleanCss = require('gulp-clean-css');
 let rename = require('gulp-rename');
 let uglifyEs = require('gulp-uglify-es').default;
 let vinylBuffer = require('vinyl-buffer');
+let sass = require('gulp-sass')(require('sass'));
+
 
 gulp.task('bundle', function() {
     return browserify(`${sourceFolder}/js/bundle.js`)
@@ -151,7 +153,7 @@ function CSS()
 {
     return src(path.src.css)
         .pipe(
-            scss({
+            sass({
                 outputStyle: 'expanded'
             })
         )
