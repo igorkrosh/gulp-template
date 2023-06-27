@@ -13,7 +13,7 @@ let path = {
     },
     src: {
         html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`],
-        pug: `${sourceFolder}/*.pug`,
+        pug: `${sourceFolder}/pug/*.pug`,
         css: [`${sourceFolder}/scss/style.scss`, `${sourceFolder}/scss/bundle.scss`, `${sourceFolder}/scss/response.scss`],
         js: [`${sourceFolder}/js/index.js`],
         img: `${sourceFolder}/images/**/*.+(png|jpg|gif|ico|svg|webp)`,

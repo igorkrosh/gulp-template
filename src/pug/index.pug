@@ -1,4 +1,4 @@
-include pug/mixins.pug
+include core/mixins
 
 doctype html
 html(lang="ru")
@@ -7,7 +7,7 @@ html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
-        include pug/head.pug
+        include core/head
     body
         .container
             h1 Hi from PUG! 
@@ -16,4 +16,4 @@ html(lang="ru")
             +Modal('test', 'ModalTemplate')
             a(rel="modal:open" href="#test") Modal Test
 
-        include pug/scripts.pug
+        include core/scripts
